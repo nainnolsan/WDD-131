@@ -117,3 +117,56 @@ footer {
     margin: 0;
   }
 }
+
+dialog.viewer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+}
+
+dialog.viewer[open] {
+  display: flex;
+}
+
+dialog.viewer::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+dialog.viewer img {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.close-viewer {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background 0.2s ease;
+}
+
+.close-viewer:hover {
+  background: rgba(255, 255, 255, 1);
+}

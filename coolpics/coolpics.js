@@ -21,3 +21,34 @@ document.addEventListener('DOMContentLoaded', () => {
   handleResize();
   window.addEventListener('resize', handleResize);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('.gallery');
+  const modal = document.querySelector('.viewer');
+
+  if (!gallery || !modal) return;
+
+  gallery.addEventListener('click', (event) => {
+    const clickedImg = event.target.closest('img');
+    if (!clickedImg) return;
+
+    const src = clickedImg.src.split('-')[0] + '-full.jpeg';
+    const alt = clickedImg.alt;
+
+    modal.innerHTML = `
+      <img src="${src}" alt="${alt}">
+      <button class="close-viewer">X</button>
+    `;
+    modal.showModal();
+
+    // Cerrar con botón X
+    modal.querySelector('.close-viewer').addEventListener('click', () => modal.close());
+  });
+
+  // Cerrar si hace clic fuera del contenido
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
+});
