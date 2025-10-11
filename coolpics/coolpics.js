@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navList = document.querySelector('nav ul');
 
   if (!menuButton || !navList) return;
-
   menuButton.addEventListener('click', () => {
     navList.classList.toggle('show');
     const isOpen = navList.classList.contains('show');
@@ -28,6 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!gallery || !modal) return;
 
+  function viewerTemplate(src, alt) {
+    return `
+      <img src="${src}" alt="${alt}">
+      <button class="close-viewer" aria-label="Close viewer">X</button>
+    `;
+  }
+
   gallery.addEventListener('click', (event) => {
     const clickedImg = event.target.closest('img');
     if (!clickedImg) return;
@@ -35,17 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const src = clickedImg.src.split('-')[0] + '-full.jpeg';
     const alt = clickedImg.alt;
 
-    modal.innerHTML = `
-      <img src="${src}" alt="${alt}">
-      <button class="close-viewer">X</button>
-    `;
+    modal.innerHTML = viewerTemplate(src, alt);
     modal.showModal();
 
-    // Cerrar con botón X
     modal.querySelector('.close-viewer').addEventListener('click', () => modal.close());
   });
 
-  // Cerrar si hace clic fuera del contenido
   modal.addEventListener('click', (event) => {
     if (event.target === modal) {
       modal.close();
