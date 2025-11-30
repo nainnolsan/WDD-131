@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary: #2563EB;
+    --secondary: #1E293B;
+    --accent1: #FACC15;
+    --accent2: #0F172A;
+    --light-bg: #FFFFFF;
+    --light-text: #1E293B;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+header, h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+header h1 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+header h2 {
+    color: var(--secondary);
+    font-weight: 400;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--primary);
+    margin: 30px 0;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.colored {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+table.colors {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table.colors th,
+table.colors td {
+    border: 2px solid var(--secondary);
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.primary { background-color: var(--primary); color: white; }
+.secondary { background-color: var(--secondary); color: white; }
+.accent1 { background-color: var(--accent1); }
+.accent2 { background-color: var(--accent2); color: white; }
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px 0;
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--accent1);
+}
+
+img {
+    display: block;
+    max-width: 80%;
+    margin: 15px auto;
+    border-radius: 10px;
+    border: 3px solid var(--secondary);
+}
+
+h2 {
+    color: var(--primary);
+    margin-top: 40px;
+}
+
+h3 {
+    color: var(--secondary);
+    margin-top: 25px;
+}
+
+main {
+    padding-bottom: 50px;
+}
